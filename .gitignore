@@ -1,0 +1,12 @@
+﻿__pycache__/
+.ipynb_checkpoints/
+.venv/
+*.pyc
+
+# Keep the dataset version used by the notebook in the repository.
+/uci-secom data set ML.csv
+
+# Generated outputs can be recreated.
+figures/*.png
+figures/*.jpg
+figures/*.pdf
