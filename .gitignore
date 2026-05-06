@@ -1,12 +1,13 @@
-﻿__pycache__/
+__pycache__/
 .ipynb_checkpoints/
 .venv/
 *.pyc
 
-# Keep the dataset version used by the notebook in the repository.
+# Le dataset suivi par Git est dans data/.
+# Cette copie à la racine est un doublon local à ne pas publier.
 /uci-secom data set ML.csv
 
-# Generated outputs can be recreated.
+# Sorties générées, recréables depuis le notebook.
 figures/*.png
 figures/*.jpg
 figures/*.pdf

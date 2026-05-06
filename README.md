@@ -1,27 +1,27 @@
-﻿# Mini-Project - When Machine Learning Fails
+# Mini-Project - When Machine Learning Fails
 
 ## Sujet
 
-Projet ML sur le dataset SECOM : diagnostiquer et corriger un mode d'echec d'un modele non lineaire.
+Projet de machine learning sur le dataset **SECOM** : diagnostiquer et corriger des modes d'échec d'un modèle non linéaire.
 
-Failure mode choisi : **shortcut learning / correlations parasites**.
+Mode d'échec principal : **shortcut learning / corrélation parasite**.
 
 Question de recherche :
 
-> Un Random Forest entraine sur SECOM peut-il apprendre une feature parasite fortement correlee a la cible dans l'environnement d'entrainement, obtenir une excellente performance apparente, puis s'effondrer lorsque cette correlation disparait ou s'inverse en deploiement ?
+> Un Random Forest entraîné sur SECOM peut-il apprendre une variable parasite fortement corrélée à la cible dans l'environnement d'entraînement, obtenir une excellente performance apparente, puis s'effondrer lorsque cette corrélation disparaît ou s'inverse en déploiement ?
 
-## Structure
+## Structure du dépôt
 
 - `notebooks/MiniProject_When_ML_Fails_SECOM_BANGOH_DANHOUEGNON.ipynb` : notebook principal du projet.
-- `data/uci-secom data set ML.csv` : dataset utilise par le notebook.
-- `figures/` : figures exportees si besoin pour le rapport.
-- `reports/` : rapport final.
-- `requirements.txt` : dependances Python.
+- `data/uci-secom data set ML.csv` : dataset utilisé par le notebook.
+- `figures/` : dossier réservé aux figures exportées.
+- `reports/` : dossier réservé au rapport final.
+- `requirements.txt` : dépendances Python nécessaires.
 
 ## Lancement
 
-1. Cloner le depot GitHub.
-2. Installer les dependances :
+1. Cloner le dépôt GitHub.
+2. Installer les dépendances :
 
    ```bash
    pip install -r requirements.txt
@@ -33,28 +33,29 @@ Question de recherche :
    notebooks/MiniProject_When_ML_Fails_SECOM_BANGOH_DANHOUEGNON.ipynb
    ```
 
-4. Executer les cellules dans l'ordre.
+4. Exécuter les cellules dans l'ordre.
 
-Le dataset est inclus dans `data/`, donc aucune personne n'a besoin de le telecharger separement.
+Le dataset est inclus dans `data/`, donc il n'est pas nécessaire de le télécharger séparément.
 
 ## Bonnes pratiques suivies
 
-- Seed fixe pour la reproductibilite.
-- Split train/test stratifie.
-- Imputation incluse dans un `Pipeline` pour eviter le data leakage.
-- Modele non lineaire autorise : `RandomForestClassifier`.
-- Comparaison entre pipeline casse et pipeline corrige.
-- Metrics adaptees a la classe rare : recall, F1, balanced accuracy, ROC-AUC.
-- Test controle avec setting in-distribution et shifted.
+- Seed fixe pour la reproductibilité.
+- Split train/test stratifié.
+- Imputation incluse dans un `Pipeline` pour éviter le data leakage.
+- Modèle non linéaire autorisé : `RandomForestClassifier`.
+- Comparaison entre pipeline dégradé et pipeline corrigé.
+- Métriques adaptées à la classe rare : recall, F1, balanced accuracy, ROC-AUC.
+- Test contrôlé avec un contexte in-distribution et un contexte shifted.
 - Validation sur plusieurs seeds.
 
-## Livrables attendus
-
-Le rapport final devra suivre exactement la structure demandee :
+## Plan du notebook
 
 1. Research question and chosen dataset
 2. Reference model and observed symptom
 3. Causal hypothesis and controlled experiment
 4. Proposed correction and evaluation
-5. Threats to validity
-6. Conclusion and what you learned
+5. Experimental validation: variance between seeds
+6. Failure mode A: class imbalance failure
+7. Failure mode B: distribution shift between industrial phases
+8. Threats to validity
+9. Conclusion
