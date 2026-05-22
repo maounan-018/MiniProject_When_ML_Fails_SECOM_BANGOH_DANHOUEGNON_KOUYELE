@@ -12,7 +12,7 @@ BASE    = Path(r'C:\DAVID DANHOUEGNON ECC\OneDrive\DOC DE COURS 2A\Machine Learn
 FIGS    = BASE / 'figures'
 REPORTS = BASE / 'reports'
 REPORTS.mkdir(exist_ok=True)
-OUT     = REPORTS / 'MiniProject_When_ML_Fails_SECOM_Report.docx'
+OUT     = REPORTS / 'MiniProject_When_ML_Fails_SECOM_BANGOH_DANHOUEGNON_KOUYELE.docx'
 
 # ── Colors ────────────────────────────────────────────────────────────────────
 BLUE        = RGBColor(0x2E, 0x75, 0xB6)
@@ -320,6 +320,30 @@ cover_line('UTER MID@S', size=13, italic=True,
            color=RGBColor(0x70, 0x70, 0x70),
            space_before=0, space_after=0)
 
+add_page_break(doc)
+
+# ── TABLE OF CONTENTS ─────────────────────────────────────────────────────────
+toc_h = doc.add_paragraph()
+toc_h.style = doc.styles['Heading 1']
+toc_hr = toc_h.add_run('Table of Contents')
+toc_hr.font.name = 'Calibri'; toc_hr.font.bold = True
+toc_hr.font.size = Pt(16); toc_hr.font.color.rgb = DARK_BLUE
+set_para_border_bottom(toc_h)
+toc_h.paragraph_format.space_before = Pt(4)
+toc_h.paragraph_format.space_after  = Pt(12)
+
+toc_para = doc.add_paragraph()
+toc_run  = toc_para.add_run()
+_fc1 = OxmlElement('w:fldChar');  _fc1.set(qn('w:fldCharType'), 'begin')
+_it  = OxmlElement('w:instrText'); _it.set(qn('xml:space'), 'preserve')
+_it.text = 'TOC \\o "1-2" \\h \\z \\u'
+_fc2 = OxmlElement('w:fldChar');  _fc2.set(qn('w:fldCharType'), 'separate')
+_fc3 = OxmlElement('w:fldChar');  _fc3.set(qn('w:fldCharType'), 'end')
+toc_run._r.append(_fc1); toc_run._r.append(_it)
+toc_run._r.append(_fc2); toc_run._r.append(_fc3)
+
+add_note(doc,
+    'Right-click on this field → "Update Field" to populate the table of contents.')
 add_page_break(doc)
 
 # ── SECTION 1 ─────────────────────────────────────────────────────────────────
@@ -832,6 +856,17 @@ add_note(doc,
     '|  Fixed seed: RANDOM_SEED = 42  '
     '|  Broken pipeline: run_broken_pipeline(...)  '
     '|  Corrected pipeline: run_corrected_pipeline(...)')
+
+# — GitHub link
+gh_para = doc.add_paragraph()
+gh_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
+gh_para.paragraph_format.space_before = Pt(10)
+gh_para.paragraph_format.space_after  = Pt(4)
+gh_label = gh_para.add_run('GitHub repository : ')
+set_run_font(gh_label, size_pt=10, bold=True, color=DARK_BLUE)
+gh_link = gh_para.add_run(
+    'https://github.com/maounan-018/MiniProject_When_ML_Fails_SECOM_BANGOH_DANHOUEGNON')
+set_run_font(gh_link, size_pt=10, color=BLUE, italic=True)
 
 # ── Save ──────────────────────────────────────────────────────────────────────
 doc.save(str(OUT))
