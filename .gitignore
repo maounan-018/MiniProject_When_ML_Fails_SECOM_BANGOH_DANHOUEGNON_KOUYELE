@@ -11,3 +11,11 @@ __pycache__/
 figures/*.png
 figures/*.jpg
 figures/*.pdf
+
+# Scripts et anciens rapports à ne pas publier.
+generate_figures.py
+generate_report.py
+generate_report_fr.py
+.claude/
+reports/MiniProject_When_ML_Fails_SECOM_Report.docx
+reports/MiniProject_When_ML_Fails_SECOM_Report_FR.docx
