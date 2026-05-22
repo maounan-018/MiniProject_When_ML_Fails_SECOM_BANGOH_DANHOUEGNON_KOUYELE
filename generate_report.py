@@ -865,7 +865,7 @@ gh_para.paragraph_format.space_after  = Pt(4)
 gh_label = gh_para.add_run('GitHub repository : ')
 set_run_font(gh_label, size_pt=10, bold=True, color=DARK_BLUE)
 gh_link = gh_para.add_run(
-    'https://github.com/maounan-018/MiniProject_When_ML_Fails_SECOM_BANGOH_DANHOUEGNON')
+    'https://github.com/maounan-018/MiniProject_When_ML_Fails_SECOM_BANGOH_DANHOUEGNON_KOUYELE')
 set_run_font(gh_link, size_pt=10, color=BLUE, italic=True)
 
 # ── Save ──────────────────────────────────────────────────────────────────────
