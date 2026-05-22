@@ -1,5 +1,11 @@
 # Mini-Project - When Machine Learning Fails
 
+## Equipe
+
+- David Danhouegnon
+- Levis Bangoh
+- Kouyele Samaa Ashley
+
 ## Sujet
 
 Projet de machine learning sur le dataset **SECOM** : diagnostiquer et corriger des modes d'échec d'un modèle non linéaire.
@@ -12,7 +18,7 @@ Question de recherche :
 
 ## Structure du dépôt
 
-- `notebooks/MiniProject_When_ML_Fails_SECOM_BANGOH_DANHOUEGNON.ipynb` : notebook principal du projet.
+- `notebooks/MiniProject_When_ML_Fails_SECOM_BANGOH_DANHOUEGNON_KOUYELE.ipynb` : notebook principal du projet.
 - `data/uci-secom data set ML.csv` : dataset utilisé par le notebook.
 - `figures/` : dossier réservé aux figures exportées.
 - `reports/` : dossier réservé au rapport final.
@@ -30,7 +36,7 @@ Question de recherche :
 3. Ouvrir le notebook :
 
    ```text
-   notebooks/MiniProject_When_ML_Fails_SECOM_BANGOH_DANHOUEGNON.ipynb
+   notebooks/MiniProject_When_ML_Fails_SECOM_BANGOH_DANHOUEGNON_KOUYELE.ipynb
    ```
 
 4. Exécuter les cellules dans l'ordre.
